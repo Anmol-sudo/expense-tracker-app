@@ -4,22 +4,26 @@ import { colors } from '@/constants/theme'
 import { useRouter } from 'expo-router'
 
 const index = () => {
-    const router = useRouter();
-    useEffect(() => {
-        setTimeout(() => {
-            router.push('/(auth)/welcome')
-        }, 2000);
-    })
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push("/(auth)/welcome");
+    }, 2000);
+
+    // Clean up the timer when component unmounts
+    return () => clearTimeout(timer);
+  }, []); // <-- Add empty dependency array
 
   return (
     <View style={styles.container}>
-   <Image 
-    style={styles.logo}
-    resizeMode='contain'
-    source={require('../assets/images/splashImage.png')}
-    />
+      <Image
+        style={styles.logo}
+        resizeMode="contain"
+        source={require("../assets/images/splashImage.png")}
+      />
     </View>
-  )
+  );
 }
 
 export default index

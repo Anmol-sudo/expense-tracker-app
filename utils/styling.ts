@@ -17,9 +17,9 @@ export const scale = (size: number) =>
     )
   );
 
-export const verticalScale = (size: number) => 
-    Math.round(
-        PixelRatio.roundToNearestPixel(
-            (longDimension / guidelineBaseHeight) * (size as number)
-        )
+export const verticalScale = (size: number) =>
+  Math.round(
+    PixelRatio.roundToNearestPixel(
+      (longDimension / guidelineBaseHeight) * (size as number)
     )
+  );

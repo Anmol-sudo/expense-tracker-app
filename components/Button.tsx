@@ -11,14 +11,13 @@ const Button = ({
   loading = false,
   children,
 }: CustomButtonProps) => {
-
-    if(loading){
-        return (
-            <View style={[styles.button, style, {backgroundColor: 'transparent'}]}>
-                <Loading />
-            </View>
-        )
-    }
+  if(loading){
+      return (
+          <View style={[styles.button, style, {backgroundColor: 'transparent'}]}>
+              <Loading />
+          </View>
+      )
+  }
 
   return (
     <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
